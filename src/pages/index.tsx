@@ -22,7 +22,7 @@ const Index = () => {
         />
       </a>
       <h1 className="text-2xl font-bold">
-        Boilerplate code for your Nextjs project with Tailwind CSS
+        Boilerplate code for your Nextjs project with Tailwind CSS 2
       </h1>
       <p>
         <span role="img" aria-label="rocket">
