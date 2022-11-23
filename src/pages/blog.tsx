@@ -8,7 +8,6 @@ const Blog = () => (
     <p>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione fuga
       recusandae quidem. Quaerat molestiae blanditiis doloremque possimus labore
-      placeat, accusamus aut saepe.
     </p>
 
     {[...Array(10)].map((_, index) => (
