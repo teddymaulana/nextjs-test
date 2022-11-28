@@ -6,16 +6,16 @@ const HeroCarousel = () => {
       data-ride="carousel"
       data-interval="5000"
     >
-      <ol class="carousel-indicators carousel-indicators--right">
+      <ol className="carousel-indicators carousel-indicators--right">
         <li
           data-target="#carouselWithRightBullets"
           data-slide-to="0"
-          class="active rounded-circle border border-white"
+          className="active rounded-circle border border-white"
         ></li>
         <li
           data-target="#carouselWithRightBullets"
           data-slide-to="1"
-          class="rounded-circle border border-white"
+          className="rounded-circle border border-white"
         ></li>
       </ol>
       <div className="carousel-inner">
