@@ -10,8 +10,9 @@ import { Main } from '@/templates/Main';
 import { getHomepage } from '@/utils/api';
 import { AppConfig } from '@/utils/AppConfig';
 
-const Index = () => {
-  const { data, status } = useQuery('Sections', getHomepage);
+const Index = (props: any) => {
+  const { data, status } = props;
+  console.log('data3', data);
   let heroCarousel = [];
   let sectionRanges = [];
   let sectionLogo = [];
@@ -44,16 +45,26 @@ const Index = () => {
         />
       }
     >
-      <HeroCarousel status={status} content={heroCarousel}></HeroCarousel>
+      {heroCarousel && (<HeroCarousel status={status} content={heroCarousel}></HeroCarousel>)}
       <ProductCarousel
         status={status}
         content={sectionProducts}
       ></ProductCarousel>
-      <HomeRanges status={status} content={sectionRanges}></HomeRanges>
+      {sectionRanges &&  (<HomeRanges status={status} content={sectionRanges}></HomeRanges>)}
       <ServicesHome></ServicesHome>
-      <Logos status={status} content={sectionLogo}></Logos>
+      {sectionLogo && (<Logos status={status} content={sectionLogo}></Logos>)}
     </Main>
   );
 };
+
+export async function getServerSideProps() {
+  const dataHomepage = await getHomepage();
+  return {
+    props: {
+      data: dataHomepage,
+      status: 'success'
+    }
+  }
+}
 
 export default Index;
