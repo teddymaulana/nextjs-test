@@ -1,4 +1,3 @@
-import { useQuery } from 'react-query';
 
 import { Meta } from '@/layouts/Meta';
 import { HeroCarousel } from '@/layouts/sections/HeroCarousel';
