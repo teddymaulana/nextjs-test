@@ -1,6 +1,6 @@
 const NEXT_PUBLIC_API_URL = 'http://localhost:1337';
 
-export function getStrapiURL(path) {
+export function getStrapiURL(path: any) {
   return `${NEXT_PUBLIC_API_URL || 'http://localhost:1337'}/api${path}`;
 }
 
