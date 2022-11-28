@@ -1,0 +1,39 @@
+.announcement-bar {
+    padding: calc-em(9.5) 0;
+    a {
+        color: $secondary;
+    }
+
+    &__timer {
+        &__title {
+            @include media-breakpoint-down(lg) {
+                font-size: 12px;
+                text-align: left;
+                width: 25%;
+            }
+        }
+
+        .list-inline-item {
+            @include media-breakpoint-down(lg) {
+                font-size: calc-em(20);
+            }
+            &:not(:first-child) {
+                &:before {
+                    content: ':';
+                    position: absolute;
+                    left: -15px;
+                }
+            }
+            
+            span {
+                display: block;
+                font-size: calc-em(9);
+                font-weight: normal;
+
+                @include media-breakpoint-up(lg) {
+                    font-size: calc-em(10);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.playground {
+
+  picture {
+    bottom: 0;
+    right: 0;
+  }
+
+  &__subtitle {
+    @include font-size($font-size-sm);
+
+    @include media-breakpoint-up(md) {
+      @include font-size($font-size-base);
+    }
+  }
+
+  &--simple {
+    display: flex !important;
+
+    &-square {
+      figcaption {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+}

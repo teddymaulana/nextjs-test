@@ -1,0 +1,23 @@
+html.us-store {
+    .homepage-product-carousel-tan-abtest {
+        .product-carousel {
+            .nav-item span:not(.d-none) {
+                display: none;
+            }
+
+            .nav-item span.d-none {
+                display: block !important;
+            }
+        }
+
+        .tab-abtest {
+            .carousel-inner:not(.d-none) {
+                display: none;
+            }
+
+            .carousel-inner.d-none {
+                display: flex !important;
+            }
+        }
+    }
+}

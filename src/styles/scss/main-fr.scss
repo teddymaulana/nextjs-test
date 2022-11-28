@@ -1,0 +1,21 @@
+@import 'core';
+
+html[lang="fr"] {
+
+	.nav-tabs--product .nav-link {
+		min-width: calc-em(75);
+
+		@include media-breakpoint-down(xs) {
+			// 360px width
+		    min-width: calc-em(60);
+		}
+    }
+
+    .playground--simple-square strong {
+        @include font-size(2em);
+
+        @include media-breakpoint-up(lg) {
+            @include font-size(2.625em);
+        }
+    }
+}

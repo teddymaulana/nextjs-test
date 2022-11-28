@@ -1,0 +1,17 @@
+.card {
+    border-left: none;
+    border-right: none;
+}
+
+.card-header {
+    .chevron-down {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    &.collapsed .chevron-down {
+        transform: translateY(-50%);
+    }
+}

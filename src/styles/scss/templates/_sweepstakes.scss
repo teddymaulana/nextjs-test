@@ -1,0 +1,30 @@
+.sweepstakes {
+
+	&__country-label .svg {
+		font-size: calc-em(10, 16);
+		margin-left: calc-em(10, 16);
+	}
+
+	&__success {
+		@include media-breakpoint-up(lg) {
+			min-height: calc-em(925, 16);
+		}
+	}
+
+	.input-group-addon + input {
+		flex-basis: 55%;
+
+		@include media-breakpoint-up(xl) {
+			flex-basis: 65%;
+		}
+	}
+
+	select {
+		opacity: 0;
+	}
+
+	.btn-primary[disabled] {
+		background-color: $gray-500;
+		border-color: $gray-500;
+	}
+}

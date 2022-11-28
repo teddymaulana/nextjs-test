@@ -1,0 +1,140 @@
+.form-control {
+	background-color: $gray-400;
+
+	&:focus {
+		background-color: $gray-400;
+	}
+
+	&:disabled,
+	&:disabled::placeholder,
+	&[readonly],
+	&[readonly]::placeholder {
+		color: $input-disabled-color;
+	}
+}
+
+.form-group {
+	@extend .mb-lg-2 !optional;
+}
+
+.search-box {
+	border: 1px solid $gray-400;
+	border-radius: $input-border-radius-sm;
+	background: $white;
+
+	&__icon svg {
+		font-size: calc-em(20, 14);
+		color: $primary;
+	}
+
+	&__close svg {
+		font-size: calc-em(12, 14);
+		color: $gray-400;
+	}
+
+	& .input-group-prepend &__icon,
+	& .input-group-append &__close {
+		padding: $search-icon-padding-y-sm;
+		background-color: $gray-400;
+		border: 0;
+	}
+
+	& .input-group-prepend &__icon {
+		padding-left: 1rem;
+		border-right: 0;
+	}
+
+	& .input-group-append &__close {
+		padding-right: 1rem;
+		border-left: 0;
+		border-top-right-radius: $input-border-radius-sm;
+		border-bottom-right-radius: $input-border-radius-sm;
+		text-decoration: none;
+		@include media-breakpoint-up(lg) {
+			display: none;
+		}
+	}
+
+	&--filled .input-group-append &__close {
+		display: flex;
+		padding-right: $input-border-radius-sm + $search-icon-padding-y-sm * 2;
+		border-right: 0;
+		margin-right: - $input-border-radius-sm;
+		border-radius: 0;
+	}
+
+	.form-control {
+		border: 0;
+		background-color: $gray-400;
+	}
+
+	.input-group-append .btn {
+		display: none;
+		border-radius: $input-border-radius-sm;
+		margin: -1px -1px -1px 0px;
+	}
+
+	&--filled .input-group-append .btn {
+		display: block;
+	}
+}
+
+.quantity-box {
+	.form-control {
+		width: 2em;
+		-moz-appearance: textfield;
+
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+	}
+
+	button:focus {
+		outline: none;
+	}
+
+	button[disabled] {
+		color: rgba(0, 0, 0, 0.2);
+	}
+}
+
+.custom-radio {
+	.custom-control-label::before {
+		border-color: $text-muted;
+	}
+
+	.custom-control-input:checked ~ .custom-control-label {
+		&::before {
+			box-shadow: inset 0px 0px 0px 2px #fff;
+		}
+		&::after {
+			background-image: none;
+		}
+	}
+}
+
+
+.custom-checkbox {
+	.custom-control-label::before {
+		border-color: $text-muted;
+	}
+
+	.custom-control-input:checked ~ .custom-control-label {
+		&::before {
+			background-color: #fff;
+		}
+
+		&::after {
+			background-size: 70%;
+			background-position: center;
+		}
+	}
+}
+
+.product-waitlist-form-oos {
+	input::placeholder {
+		color: $gray-600;
+	}
+}

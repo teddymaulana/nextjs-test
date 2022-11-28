@@ -1,0 +1,46 @@
+@import 'core';
+
+@import 'core/fonts';
+@import 'core/type';
+@import 'core/grid';
+@import 'core/utilities';
+
+@mixin make-box($parent, $color) {
+	.box-#{$parent} {
+		text-align: center;
+
+		&:before {
+			content: '';
+			display: block;
+			width: 100%;
+			padding-top: 100%;
+			background-color: $color;
+			margin-bottom: map-get($spacers, 1);
+		}
+
+		&:after {
+			content: '#{$color}';
+			display: block;
+		}
+	}
+}
+
+@include make-box('primary', $primary);
+@include make-box('primary-light', $primary-light);
+@include make-box('primary-dark', $primary-dark);
+@include make-box('secondary', $secondary);
+@include make-box('secondary-light', $secondary-light);
+@include make-box('body-color', $body-color);
+@include make-box('secondary-body', $gray-600);
+@include make-box('gray-500', $gray-500);
+@include make-box('gray-400', $gray-400);
+@include make-box('gray-100', $gray-100);
+@include make-box('sh-purple', $sh-purple);
+@include make-box('sh-purple-light', $sh-purple-light);
+@include make-box('bali-bod-blue', $bali-bod-blue);
+@include make-box('bali-bod-blue-light', $bali-bod-blue-light);
+@include make-box('sh-orange', $sh-orange);
+@include make-box('sh-orange-light', $sh-orange-light);
+@include make-box('green-light', $green-light);
+@include make-box('yellow-light', $yellow-light);
+@include make-box('pink-light', $pink-light);

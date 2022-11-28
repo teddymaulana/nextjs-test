@@ -1,0 +1,83 @@
+.video-card {
+	picture {
+		cursor: pointer;
+
+		.svg {
+			position: absolute;
+			color: white;
+			font-size: 3em;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	&__icon-left {
+		.svg {
+			left: calc-em(20, 36);
+			right: auto;
+		}
+	}
+
+	&--play-caption {
+		span {
+			position: absolute;
+			top: auto;
+			bottom: calc-em(65, 36);
+			left: calc-em(140, 36);
+			font-size: calc-em(26, 16);
+
+			@include media-breakpoint-up(lg) {
+				font-size: calc-em(44, 16);
+				left: calc-em(56, 16);
+				bottom: calc-em(24, 16);
+			}
+		}
+
+		picture {
+			.svg {
+				left: calc-em(20, 36);
+				right: auto;
+				bottom: calc-em(22, 36);
+				top: auto;
+				font-size: 3.6em;
+				transform: none;
+
+				@include media-breakpoint-up(lg) {
+					left: calc-em(20, 36);
+					right: auto;
+					bottom: calc-em(18, 36);
+					top: auto;
+					font-size: 5.5em;
+				}
+			}
+		}
+	}
+}
+
+.video-modal {
+	.modal-content {
+		overflow: hidden;
+	}
+
+	.close {
+		opacity: 0.6;
+		.svg {
+			filter: drop-shadow(0px 1px 0px #fff);
+		}
+	}
+
+	&--body {
+		padding: 0;
+	}
+
+	&--icon {
+		right: calc-em(10, 16);
+		top: calc-em(10, 16);
+	}
+
+	video, iframe {
+		display: block;
+		width: 100%;
+	}
+}

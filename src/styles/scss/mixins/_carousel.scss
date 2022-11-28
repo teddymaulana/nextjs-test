@@ -1,0 +1,27 @@
+@mixin carousel-item-level($el_start, $el_assign, $count, $include_first_parent: true){
+  $result: ();
+
+  @for $i from 0 to $count{
+    @if($i == 0) {
+      @if($include_first_parent) {
+        $result: append($result, $el_start, "comma");
+      }
+    } @else {
+      $assignPlus: $el_start;
+      @for $x from 0 to $i{
+        $assignPlus: $assignPlus + "+" + $el_assign;
+      }
+      $result: append($result, $assignPlus, "comma");
+    }
+  }
+
+  #{$result} {
+    @content
+  }
+}
+
+@mixin make-carousel-centered($size, $columns: $grid-columns) {
+  $sizecol: percentage($size/$grid-columns);
+  $calculation: abs(abs($sizecol -((100 - $sizecol) / 2)));
+  transform: translateX(-#{$calculation});
+}

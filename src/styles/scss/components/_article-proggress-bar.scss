@@ -1,0 +1,20 @@
+.reading-proggress-bar {
+	background-color: $secondary-light;
+	content: ' ';
+	height: calc-em(4);
+	top: 0;
+	z-index: $zindex-fixed;
+
+	&__proggress {
+		background-color: $secondary;
+		height: 100%;
+	}
+
+	&--sticky {
+		transform: translateY(4em);
+
+		@include media-breakpoint-up(lg) {
+			transform: translateY(0.25em);
+		}
+	}
+}

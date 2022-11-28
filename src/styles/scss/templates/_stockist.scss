@@ -1,0 +1,20 @@
+.stockist {
+
+	figure a {
+		background-color: $secondary-light;
+	}
+
+	a {
+		color: $body-color;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+
+	img {
+		@include media-breakpoint-down(md) {
+				width: 100%;
+		}
+	}
+}

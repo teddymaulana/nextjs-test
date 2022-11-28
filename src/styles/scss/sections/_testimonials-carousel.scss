@@ -1,0 +1,32 @@
+.testimonials-carousel {
+
+    &__quote {
+
+        .quote-up,
+        .quote-down {
+            opacity: .3;
+            position: absolute;
+            font-size: calc-em(32, 16);
+        }
+
+        .quote-down {
+            top: -$grid-gutter-width;
+            left: $grid-gutter-width-lg;
+
+            @include media-breakpoint-up(lg) {
+                top: 0;
+                transform: translateY(-50%);
+            }
+        }
+
+        .quote-up {
+            bottom: -$grid-gutter-width;
+            right: $grid-gutter-width-lg;
+
+            @include media-breakpoint-up(lg) {
+                bottom: 0;
+                transform: translateY(50%);
+            }
+        }
+    }
+}

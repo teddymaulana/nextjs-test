@@ -1,0 +1,101 @@
+.variant-swatch {
+	flex-shrink: 0;
+	width: calc-em(40);
+	height: calc-em(40);
+	border-radius: 50%;
+	border: 2px solid #fff;
+	background-color: white;
+	background-size: calc-em(30);
+	position: relative;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&.oos:after {
+		content: '';
+		height: 1px;
+		background-color: $primary;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 50%;
+		transform: rotate(-45deg) translateY(-50%);
+	}
+
+	&:before {
+		content: ' ';
+		position: absolute;
+		width: calc-em(30);
+		height: calc-em(30);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		top: calc-em(3);
+		left: calc-em(3);
+		margin: auto;
+		border-radius: 50%;
+	}
+
+	&--lg {
+		width: calc-em(40);
+		height: calc-em(40);
+
+		&:before {
+			width: calc-em(30);
+			height: calc-em(30);
+		}
+	}
+
+
+	&.custom-control-label {
+		&::before,
+		&::after {
+			content: none;
+		}
+	}
+
+	.custom-control-input:checked ~ & {
+		border-color: $primary;
+	}
+
+	&.small {
+		&, &::before {
+			width: calc-em(10, $unit: 1rem);
+			height: calc-em(10, $unit: 1rem);
+			background-size: calc-em(10, $unit: 1rem) calc-em(10, $unit: 1rem);
+			top: 0;
+			left: 0;
+		}
+	}
+
+	&__new-tag {
+		left: 50%;
+		bottom: 0;
+		transform: translate(-50%, 50%);
+	}
+
+	&:focus {
+		outline: none; // to remove focus border on button
+	}
+
+	@each $color, $value in $shade-colors {
+		&.#{$color} {
+			&:before {
+				background-color: $value;
+			}
+		}
+	}
+
+	
+	&.hot-pink {
+		&:before {
+			background-color: #D62E55;
+		}
+	}
+	&.powder-pink {
+		&:before {
+			background-color: #F5DADF;
+		}
+	}
+}

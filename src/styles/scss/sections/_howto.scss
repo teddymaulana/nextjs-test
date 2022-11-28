@@ -1,0 +1,98 @@
+.how-to {
+
+	.carousel--loop {
+		overflow: hidden;
+	}
+
+	.carousel--centered {
+		@include media-breakpoint-up(lg) {
+			margin-left: -$grid-gutter-width;
+			margin-right: -$grid-gutter-width;
+		}
+	}
+
+	.carousel-control-prev,
+	.carousel-control-next {
+		width: 10%;
+
+		@include media-breakpoint-up(lg) {
+			background-color: $primary-light-second;
+		}
+	}
+
+	.carousel-control-prev {
+		&-icon {
+			top: 30.5%;
+			left: 60%;
+
+			@media (min-width: 414px) {
+				top: 31.5%;
+				left: 60%;
+			}
+
+			@media (min-width: 576px) {
+				top: 35.5%;
+				left: 60%;
+			}
+
+			@include media-breakpoint-up(md) {
+				left: 3.5em;
+				top: 38.8%;
+			}
+
+			@include media-breakpoint-up(lg) {
+				left: 4.5em;
+				top: 31%;
+			}
+
+			@media (min-width: 1260px) {
+				left: 6em;
+				top: 34.5%;
+			}
+		}
+	}
+
+	.carousel-control-next {
+		&-icon {
+			top: 30.5%;
+			right: 60%;
+
+			@media (min-width: 414px) {
+				top: 31.5%;
+				right: 60%;
+			}
+
+			@media (min-width: 576px) {
+				top: 35.5%;
+				right: 60%;
+			}
+
+			@include media-breakpoint-up(md) {
+				right: 3.5em;
+				top: 38.8%;
+			}
+
+			@include media-breakpoint-up(lg) {
+				right: 4.5em;
+				top: 31%;
+			}
+
+			@media (min-width: 1260px) {
+				right: 6em;
+				top: 34.5%;
+			}
+		}
+	}
+
+	.carousel-inner {
+		transform: translateX(-62.5%);
+
+		@include media-breakpoint-up(lg) {
+			transform: translateX(0);
+		}
+
+		h3 {
+			min-height: 90px;
+		}
+	}
+}

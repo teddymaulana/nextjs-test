@@ -1,0 +1,19 @@
+.breadcrumb {
+	flex-wrap: nowrap;
+	@include font-size($font-size-base);
+	text-overflow: ellipsis;
+}
+
+.breadcrumb-item {
+
+	&__link {
+		color: $body-color;
+	}
+
+	& + .breadcrumb-item {
+		&::before {
+			content: '/';
+			float: none;
+		}
+	}
+}

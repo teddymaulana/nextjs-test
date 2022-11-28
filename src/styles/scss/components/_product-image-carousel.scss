@@ -1,0 +1,29 @@
+.product-image-carousel {
+	@include media-breakpoint-up(lg) {
+		&__container, &__indicator {
+			position: sticky;
+			top: map-get($spacers, 3);
+		}
+	}
+
+	&__indicator {
+		&__item {
+			@include media-breakpoint-down(md) {
+				@include make-col(1, 5);
+			}
+		}
+	}
+
+	&, &__indicator {
+		.with-video {
+			cursor: pointer;
+			.svg {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-size: calc-em(30);
+			}
+		}
+	}
+}

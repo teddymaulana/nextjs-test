@@ -1,0 +1,163 @@
+.nav-link {
+	color: $body-color;
+
+	&:not(.link-search) {
+
+		&.active,
+		&:hover {
+			color: $primary;
+
+			path {
+				fill: $primary;
+			}
+		}
+	}
+
+	.svg {
+		font-size: calc-em(22, 16);
+
+		@include media-breakpoint-up(lg) {
+			margin-right: calc-em(5, 16);
+		}
+	}
+
+	.cart-drawer__count {
+		font-family: Arial, Helvetica, sans-serif;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -7.5%);
+		line-height: 1;
+		@include media-breakpoint-up(lg) {
+			transform: translate(-50%, -12.5%);
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		&.cart {
+			flex-basis: 20%;
+
+			.svg {
+				font-size: calc-em(25);
+			}
+
+			.cart-drawer__count {
+				font-family: Arial, Helvetica, sans-serif;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -7.5%);
+				line-height: 1;
+			}
+
+			&:focus,
+			&:active {
+				outline: none;
+			}
+		}
+	}
+}
+
+.navbar-brand {
+	color: $secondary;
+
+	&:before {
+		font-size: calc-em(34,20);
+		@include media-breakpoint-up(xl) {
+			font-size: calc-em(41,20);
+		}
+	}
+
+	&:hover {
+		color: $secondary;
+	}
+
+	@include media-breakpoint-up(lg) {
+		padding-top: calc-em(11.625, 16);
+		padding-bottom: calc-em(11.625, 16);
+		flex-basis: 15%;
+
+		svg {
+			height: calc-em(33, 16);
+		}
+	}
+}
+
+.navbar-expand-lg {
+
+	@include media-breakpoint-up(lg) {
+		.navbar-nav {
+			flex-basis: auto;
+
+			.nav-link {
+				line-height: calc-em(22, 16);
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+
+		.nav-item {
+			padding-left: $grid-gutter-width / 2;
+			padding-right: $grid-gutter-width / 2;
+
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+.nav-blog {
+	&--pink {
+		background-color: $primary-light;
+	}
+
+	&--sticky {
+		z-index: $zindex-sticky;
+		top: 0px;
+		transform: translateY(-100%);
+		transition: all 0.1s ease-in-out;
+
+		&.active {
+			top: 4px;
+			transform: translateY(0);
+			transition: all 0.1s ease-in-out;
+		}
+	}
+
+	a {
+		&.active,
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.product-info-tab {
+	border-color: $primary-light;
+
+	.nav-item {
+		flex: 1 0 0;
+	}
+
+	.nav-link {
+		&.active {
+			font-weight: $font-weight-bold;
+			background: none;
+			border-bottom: 2px solid $primary !important;
+		}
+	}
+}
+
+
+.nav-link--caption {
+	svg {
+		height: calc-em(16);
+	}
+}

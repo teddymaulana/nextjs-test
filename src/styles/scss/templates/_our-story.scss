@@ -1,0 +1,60 @@
+.page-banner-image {
+	h1 {
+		color: white;
+	}
+}
+
+.page-video-banner {
+	background-color: #f6e4ef;
+	img {
+		width: 100%;
+		object-fit: contain;
+
+		@include media-breakpoint-up(lg) {
+			width: auto;
+		}
+	}
+
+	.container {
+		@include media-breakpoint-up(lg) {
+			position: absolute;
+		}
+	}
+}
+
+.page-award-slider {
+	background-color: #f9eeca;
+
+	.carousel-control-next,
+	.carousel-control-prev {
+		width: 15%;
+	}
+
+	.carousel-control-prev {
+		@include media-breakpoint-up(lg) {
+			left: -3em;
+		}
+	}
+
+	.carousel-control-next {
+		@include media-breakpoint-up(lg) {
+			right: -3em;
+		}
+	}
+
+	.carousel-control-next-icon {
+		.svg {
+			@include media-breakpoint-up(lg) {
+				margin-left: -1.5em;
+			}
+		}
+	}
+
+	.carousel-control-prev-icon {
+		.svg {
+			@include media-breakpoint-up(lg) {
+				margin-right: -1.5em;
+			}
+		}
+	}
+}

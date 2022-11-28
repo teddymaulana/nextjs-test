@@ -1,0 +1,147 @@
+
+
+// Border color
+.border-bg-primary-light-second {
+	border-color: $primary-light-second !important;
+}
+
+// Sticky sidebar at bottom
+.sticky-bottom {
+	top: auto;
+	bottom: map-get($spacers, 2);
+
+	&__container {
+		display: flex;
+		align-items: flex-end;
+	}
+}
+
+// borders
+.border-primary-light-second {
+	border-color: $primary-light-second !important;
+}
+
+.border-secondary-light {
+	border-color: $secondary-light !important;
+}
+
+.bg-sm-primary-light-second {
+	@include media-breakpoint-down(lg) {
+		background: $primary-light-second;
+	}
+}
+
+// Hover overlay for image
+.hover-overlay {
+	position: relative;
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		transition: background-color $hover-transition-timing;
+	}
+	&:hover:after {
+		background-color: rgba(255, 255, 255, 0.2);
+	}
+}
+
+// To make button looks like text
+.btn-unstyled {
+	border: 0;
+	padding: 0;
+	background: none;
+	&:focus {
+		outline: none;
+	}
+}
+
+.rounded-right-0 {
+	border-top-right-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+}
+
+.rounded-left-0 {
+	border-top-left-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+}
+
+@include media-breakpoint-up(lg) {
+	.position-lg-sticky {
+		position: sticky !important;
+	}
+}
+
+.opacity-0 {
+	opacity: 0;
+}
+
+// Special margin for text spacing
+.mr-25, .mx-25 {
+	margin-right: $spacer * 0.25 !important;
+}
+.ml-25, .mx-25 {
+	margin-left: $spacer * 0.25 !important;
+}
+.mt-25, .my-25 {
+	margin-top: $spacer * 0.25 !important;
+}
+.mb-25, .my-25 {
+	margin-bottom: $spacer * 0.25 !important;
+}
+
+// Cursor utilites
+.cursor-default {
+	cursor: default !important;
+}
+
+.fit--cover {
+	object-fit: cover;
+}
+
+.fit-lg--contain {
+	@include media-breakpoint-up(lg) {
+		object-fit: contain !important;
+	}
+}
+
+@keyframes gradient-shimmer {
+	0%{background-position: 100% 50%}
+	100%{background-position: 0% 50%}
+}
+
+.bg-shimmer {
+	background: $gray-500;
+	background: linear-gradient(130deg, $gray-500 33%, $gray-100 50%, $gray-500 67%);
+	background-size: 1000% 1000%;
+	animation: gradient-shimmer 2.5s ease infinite;
+
+	img {
+		transition: opacity 0.4s linear;
+		opacity: 0;
+	}
+
+	&--loaded {
+		img {
+			opacity: 1;
+		}
+	}
+}
+
+// Percy
+@media only percy {
+	picture.embed-responsive,
+	[loading=lazy] {
+		visibility: hidden !important;
+	}
+	iframe,
+	.yotpo-bottomline
+	.react-yotpo-star,
+	.react-yotpo-widget,
+	.popup-email,
+	.cookies-banner {
+		display: none !important;
+	}
+}
