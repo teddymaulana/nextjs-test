@@ -1,7 +1,7 @@
 import ProductCard from '@/layouts/compounds/ProductCard';
 
-const ProductCarousel = (props) => {
-  const { status, content } = props;
+const ProductCarousel = (props: any) => {
+  const { content } = props;
   console.log('ProductCarousel', content);
 
   return (

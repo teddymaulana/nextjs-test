@@ -50,7 +50,7 @@ const Index = () => {
         content={sectionProducts}
       ></ProductCarousel>
       <HomeRanges status={status} content={sectionRanges}></HomeRanges>
-      <ServicesHome status={status}></ServicesHome>
+      <ServicesHome></ServicesHome>
       <Logos status={status} content={sectionLogo}></Logos>
     </Main>
   );

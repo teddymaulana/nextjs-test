@@ -1,6 +1,4 @@
 const ServicesHome = () => {
-  console.log('ServicesHome');
-
   return (
     <section className="bg-gray-400 text-center">
       <div className="container">

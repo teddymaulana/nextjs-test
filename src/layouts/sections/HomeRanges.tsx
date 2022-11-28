@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Fragment } from 'react';
 
-const HomeRanges = (props) => {
+const HomeRanges = (props: any) => {
   const { status, content } = props;
 
   return (

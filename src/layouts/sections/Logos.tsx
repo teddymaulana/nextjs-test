@@ -1,4 +1,4 @@
-const Logos = (props) => {
+const Logos = (props: any) => {
   const { status, content } = props;
   return (
     <>
