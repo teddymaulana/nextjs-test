@@ -11,7 +11,6 @@ import { AppConfig } from '@/utils/AppConfig';
 
 const Index = (props: any) => {
   const { data, status } = props;
-  console.log('data3', data);
   let heroCarousel = [];
   let sectionRanges = [];
   let sectionLogo = [];
