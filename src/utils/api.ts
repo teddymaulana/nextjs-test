@@ -1,7 +1,7 @@
-const NEXT_PUBLIC_API_URL = 'http://localhost:1337';
+const NEXT_PUBLIC_API_URL = 'https://cocoandeve-strapi-rg4t4.ondigitalocean.app';
 
 export function getStrapiURL(path: any) {
-  return `${NEXT_PUBLIC_API_URL || 'http://localhost:1337'}/api${path}`;
+  return `${NEXT_PUBLIC_API_URL || 'https://cocoandeve-strapi-rg4t4.ondigitalocean.app'}/api${path}`;
 }
 
 export async function getHomepage() {
