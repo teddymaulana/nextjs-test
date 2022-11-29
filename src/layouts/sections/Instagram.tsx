@@ -5,7 +5,7 @@ const Instagram = (props: any) => {
     <section className="instagram pt-4 text-center bg-primary-light container-fluid">
       <div className="row">
         <div className="col-11 col-lg-6 text-center mx-auto pb-4">
-          <p className="h2" role="heading" aria-level="2">{content.title}</p>
+          <p className="h2" role="heading">{content.title}</p>
           <p className="h4">
             <a href="https://www.instagram.com/cocoandeve/" target="_blank" className="text-dark text-underline" aria-label="Go to CocoandEve Instagram" title="opens in a new window">@cocoandeve</a>
           </p>

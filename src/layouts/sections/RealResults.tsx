@@ -36,7 +36,7 @@ const RealResults = (props: any) => {
               <a className="nav-link text-decoration-none active h4 mb-0" data-target="#all" data-toggle="tab" href="#" role="tab" aria-controls="all">All</a>
             </li>
           </ul>
-          <label for="rangeResultSelect" className="sr-only">Range Real Result</label>
+          <label className="sr-only">Range Real Result</label>
           <select id="rangeResultSelect" data-toggle="select" className="custom-select custom-select-lg mb-4 mx-auto col-6 d-block d-md-none">
             <option value="#all" selected>All</option>
             <option value="#tan">Tan</option>

@@ -1,5 +1,4 @@
 import ProductCard from '@/layouts/compounds/ProductCard';
-import product from 'next-seo/lib/jsonld/product';
 
 const ProductCarousel = (props: any) => {
   const { products, content } = props;

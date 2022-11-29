@@ -22,7 +22,7 @@ const RealResultsCard = (props: any) => {
           </p>
           <p>
             <strong>{content.label}:&nbsp;</strong>
-            <a href={content.url} title={content.reviewon} tabindex="0" className="text-underline">
+            <a href={content.url} title={content.reviewon} className="text-underline">
               {content.reviewon}
             </a>
           </p>
