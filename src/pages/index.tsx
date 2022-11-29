@@ -55,7 +55,7 @@ const Index = (props: any) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const dataHomepage = await getHomepage();
   return {
     props: {
