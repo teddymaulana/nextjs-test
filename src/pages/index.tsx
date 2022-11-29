@@ -4,35 +4,53 @@ import { HeroCarousel } from '@/layouts/sections/HeroCarousel';
 import { HomeRanges } from '@/layouts/sections/HomeRanges';
 import { Logos } from '@/layouts/sections/Logos';
 import { ProductCarousel } from '@/layouts/sections/ProductCarousel';
+import { RealResults } from '@/layouts/sections/RealResults';
 import { ServicesHome } from '@/layouts/sections/ServicesHome';
+import { Instagram } from '@/layouts/sections/Instagram';
 import { Main } from '@/templates/Main';
-import { getHomepage } from '@/utils/api';
+import { getHomepage, getRealResults } from '@/utils/api';
 import { AppConfig } from '@/utils/AppConfig';
 
 const Index = (props: any) => {
-  const { data, status } = props;
+  const { homepage, realResults } = props;
   let heroCarousel = [];
   let sectionRanges = [];
   let sectionLogo = [];
   let sectionProducts = [];
-  if (status === 'success') {
-    heroCarousel = data.Sections.find(function (i: any) {
+  let sectionInstagram = [];
+  let realResultsData = {};
+  let products = [];
+  if (homepage.status === 'success') {
+    heroCarousel = homepage.data.Sections.find(function (i: any) {
       /* eslint-disable no-underscore-dangle */
       return i.__component === 'section.slideshow';
     })[`slide_${AppConfig.store}`];
 
-    sectionRanges = data.Sections.find(function (i: any) {
+    sectionRanges = homepage.data.Sections.find(function (i: any) {
       return i.__component === 'section.featured-collection';
     });
 
-    sectionLogo = data.Sections.find(function (i: any) {
+    sectionLogo = homepage.data.Sections.find(function (i: any) {
       return i.__component === 'section.editors';
     });
 
-    sectionProducts = data.Sections.find(function (i: any) {
+    sectionInstagram = homepage.data.Sections.find(function (i: any) {
+      return i.__component === 'section.instagram';
+    });
+
+    sectionProducts = homepage.data.Sections.find(function (i: any) {
       return i.__component === 'section.featured-products';
     });
+
+    products = homepage.data.productData;
+
+    console.log('homepage', homepage);
   }
+
+  if (realResults.status === 'success') {
+    realResultsData = realResults.data;
+  }
+  
 
   return (
     <Main
@@ -43,24 +61,34 @@ const Index = (props: any) => {
         />
       }
     >
-      {heroCarousel && (<HeroCarousel status={status} content={heroCarousel}></HeroCarousel>)}
+      {heroCarousel && (<HeroCarousel status={homepage.status} content={heroCarousel}></HeroCarousel>)}
       <ProductCarousel
-        status={status}
+        status={homepage.status}
         content={sectionProducts}
+        products={products}
       ></ProductCarousel>
-      {sectionRanges &&  (<HomeRanges status={status} content={sectionRanges}></HomeRanges>)}
+      {sectionRanges &&  (<HomeRanges status={homepage.status} content={sectionRanges}></HomeRanges>)}
       <ServicesHome></ServicesHome>
-      {sectionLogo && (<Logos status={status} content={sectionLogo}></Logos>)}
+      {sectionLogo && (<Logos status={homepage.status} content={sectionLogo}></Logos>)}
+      <RealResults reviews={realResultsData}></RealResults>
+      <Instagram content={sectionInstagram}></Instagram>
     </Main>
   );
 };
 
 export async function getStaticProps() {
   const dataHomepage = await getHomepage();
+  const dataReviews = await getRealResults();
   return {
     props: {
-      data: dataHomepage,
-      status: 'success'
+      homepage: {
+        data: dataHomepage,
+        status: 'success'
+      },
+      realResults: {
+        data: dataReviews,
+        status: 'success'
+      }
     }
   }
 }

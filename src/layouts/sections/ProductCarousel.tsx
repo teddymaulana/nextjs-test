@@ -1,8 +1,9 @@
 import ProductCard from '@/layouts/compounds/ProductCard';
+import product from 'next-seo/lib/jsonld/product';
 
 const ProductCarousel = (props: any) => {
-  const { content } = props;
-  console.log('ProductCarousel', content);
+  const { products, content } = props;
+  console.log('ProductCarousel', products);
 
   return (
     <section
@@ -44,7 +45,7 @@ const ProductCarousel = (props: any) => {
         >
           <div className="carousel--centered pt-2">
             <div className="carousel-inner row mx-0 flex-nowrap" role="listbox">
-              <ProductCard></ProductCard>
+              {products.map((product:any) => <ProductCard content={product}></ProductCard>)}
             </div>
           </div>
         </div>
@@ -57,7 +58,20 @@ const ProductCarousel = (props: any) => {
         >
           <div className="carousel--centered pt-2">
             <div className="carousel-inner row mx-0 flex-nowrap" role="listbox">
-              <ProductCard></ProductCard>
+              {products.map((product:any) => <ProductCard content={product}></ProductCard>)}
+            </div>
+          </div>
+        </div>
+        <div
+          className="tab-pane fade carousel slide carousel--loop carousel--swipe show active"
+          id="value-sets"
+          role="tabpanel"
+          aria-labelledby="value-sets"
+          data-slide-number="4"
+        >
+          <div className="carousel--centered pt-2">
+            <div className="carousel-inner row mx-0 flex-nowrap" role="listbox">
+              {products.map((product:any, index: number) => <ProductCard content={product} activeClass={index === 0 ? 'active' : ''}></ProductCard>)}
             </div>
           </div>
         </div>
