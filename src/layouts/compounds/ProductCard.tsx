@@ -1,7 +1,6 @@
 const ProductCard = (props: any) => {
   const { content, activeClass } = props;
   // const variant = content.variants.sort((a: any, b: any) => a.price - b.price)
-  console.log('product card', content);
 
   return (
     <div className={`carousel-item col-9 col-md-3 product-card text-center ${activeClass}`}>

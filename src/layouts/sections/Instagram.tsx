@@ -1,6 +1,5 @@
 const Instagram = (props: any) => {
   const { content } = props;
-  console.log('Ins', content)
   return (
     <section className="instagram pt-4 text-center bg-primary-light container-fluid">
       <div className="row">

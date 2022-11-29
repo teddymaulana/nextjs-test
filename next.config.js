@@ -21,4 +21,7 @@ module.exports = withBundleAnalyzer({
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
+  experimental: {
+    largePageDataBytes: 150 * 100000,
+  },
 });
