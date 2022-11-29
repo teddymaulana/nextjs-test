@@ -8,7 +8,7 @@ const RealResults = (props: any) => {
         <div className="container p-0 p-md-1">
 		      <p className="pb-2 mb-0 h1 text-center">Real Results</p>
           <ul className="nav nav-tabs mx-auto nav-tabs--real-results text-center mb-5 justify-content-center d-none d-md-flex" role="tablist">
-            <li className="nav-item">
+            <li className="nav-item" key='nav-item-1'>
               <a className="nav-link text-decoration-none h4 mb-0 font-weight-normal {% if site.first == 'fr' %}px-g w-auto{% endif %}"
                 data-toggle="tab"
                 href="#"
@@ -16,7 +16,7 @@ const RealResults = (props: any) => {
                 role="tab">Tan
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" key='nav-item-2'>
               <a className="nav-link text-decoration-none h4 mb-0 font-weight-normal {% if site.first == 'fr' %}px-g w-auto{% endif %}"
                 data-toggle="tab"
                 href="#"
@@ -24,7 +24,7 @@ const RealResults = (props: any) => {
                 role="tab">Hair
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" key='nav-item-3'>
               <a className="nav-link text-decoration-none h4 mb-0 font-weight-normal {% if site.first == 'fr' %}px-g w-auto{% endif %}"
                 data-toggle="tab"
                 href="#"
@@ -38,7 +38,7 @@ const RealResults = (props: any) => {
           </ul>
           <label className="sr-only">Range Real Result</label>
           <select id="rangeResultSelect" data-toggle="select" className="custom-select custom-select-lg mb-4 mx-auto col-6 d-block d-md-none">
-            <option value="#all" selected>All</option>
+            <option value="#all">All</option>
             <option value="#tan">Tan</option>
             <option value="#hair">Hair</option>
             <option value="#body">Body</option>

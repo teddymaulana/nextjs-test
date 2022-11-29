@@ -17,9 +17,6 @@ const RealResultsCard = (props: any) => {
           )}
         </picture>
         <div className="p-2 bg-white h-100">
-          <p className="d-flex justify-content-between align-items-center mb-0">
-            <img className="svg text-primary h4 mb-0" src="icons/five-stars.svg" replace-to-svg />
-          </p>
           <p>
             <strong>{content.label}:&nbsp;</strong>
             <a href={content.url} title={content.reviewon} className="text-underline">

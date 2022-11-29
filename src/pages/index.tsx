@@ -62,16 +62,17 @@ const Index = (props: any) => {
       }
     >
       {heroCarousel && (<HeroCarousel status={homepage.status} content={heroCarousel}></HeroCarousel>)}
+      {products && sectionProducts && (
       <ProductCarousel
         status={homepage.status}
         content={sectionProducts}
         products={products}
-      ></ProductCarousel>
+      ></ProductCarousel>)}
       {sectionRanges &&  (<HomeRanges status={homepage.status} content={sectionRanges}></HomeRanges>)}
       <ServicesHome></ServicesHome>
       {sectionLogo && (<Logos status={homepage.status} content={sectionLogo}></Logos>)}
-      <RealResults reviews={realResultsData}></RealResults>
-      <Instagram content={sectionInstagram}></Instagram>
+      {realResultsData && (<RealResults reviews={realResultsData}></RealResults>)}
+      {sectionInstagram && (<Instagram content={sectionInstagram}></Instagram>)}
     </Main>
   );
 };
