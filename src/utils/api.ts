@@ -1,5 +1,5 @@
-// const NEXT_PUBLIC_API_URL = 'https://cocoandeve-strapi-rg4t4.ondigitalocean.app';
-const NEXT_PUBLIC_API_URL = 'http://localhost:1337';
+const NEXT_PUBLIC_API_URL = 'https://cocoandeve-strapi-rg4t4.ondigitalocean.app';
+// const NEXT_PUBLIC_API_URL = 'http://localhost:1337';
 
 export function getStrapiURL(path: any) {
   return `${NEXT_PUBLIC_API_URL || 'https://cocoandeve-strapi-rg4t4.ondigitalocean.app'}/api${path}`;
